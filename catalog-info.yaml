@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: "reviews"
+  title: "reviews"
+  description: "Reviews API"
+  annotations:
+    backstage.io/spectral-ruleset-url: https://raw.githubusercontent.com/bookinfo/spectral-rules/main/ruleset.yaml
+  links:
+    - url: https://registry-apicurio-registry.apps.cluster-9h552.dynamic.redhatworkshops.io/ui/artifacts/com.redhat.demo.bookinfo/reviews/versions/latest
+      title: Apicurio Registry
+      icon: web
+    - url: https://microcks-microcks.apps.cluster-9h552.dynamic.redhatworkshops.io/#/services?name=reviews
+      title: Microcks
+    - url: https://microcks-microcks.apps.cluster-9h552.dynamic.redhatworkshops.io/rest/reviews/v1
+      title: Mock
+      icon: web
+spec:
+  type: openapi
+  system: system:default/bookinfo
+  owner: group:default/backstage-admins
+  lifecycle: production
+  definition:
+    $openapi: https://github.com/contract-first-idp-test/bookinfo-reviews-api/blob/main/specification.yaml
